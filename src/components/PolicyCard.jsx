@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
 
 export default function PolicyCard({ title, description, imageUrl }) {
   return (
@@ -20,11 +21,14 @@ export default function PolicyCard({ title, description, imageUrl }) {
           Show Details
         </button>
         <button
-          className="add-to-cart-button select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="add-to-cart-button select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all relative overflow-hidden"
           type="button"
           data-ripple-light="true"
         >
-          Add To Cart
+          <span className="text-content">Add To Cart</span>
+          <span className="icon-content">
+            <FaShoppingCart />
+          </span>
         </button>
       </div>
     </div>

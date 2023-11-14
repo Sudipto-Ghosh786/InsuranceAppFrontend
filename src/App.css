@@ -7,6 +7,45 @@
   pointer-events: none;
 }
 
+.show-details-button {
+  padding: 0;
+  min-width: 130px;
+  min-height: 50px;
+}
+
+.add-to-cart-button {
+  padding: 0;
+  min-width: 130px;
+  min-height: 50px;
+  position: relative;
+}
+
+.text-content,
+.icon-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.icon-content {
+  opacity: 0;
+}
+
+.add-to-cart-button:hover .text-content {
+  opacity: 0;
+}
+
+.add-to-cart-button:hover .icon-content {
+  opacity: 1;
+}
+
+
 .nav-item {
   position: relative;
   display: inline-block;
