@@ -18,10 +18,10 @@ export default function NavigationBar() {
 
       {/* Menu */}
       <div className='hidden md:flex h-full items-center'>
-        <ul className=' w-full h-full hidden md:flex items-center'>
-          <li className='m-2'>Home</li>
-          <li className='m-2'>Policies</li>
-          <li className='m-2'>About Us</li>
+        <ul className='w-full h-full hidden md:flex items-center'>
+          <li className='nav-item m-2'>Home</li>
+          <li className='nav-item m-2'>Policies</li>
+          <li className='nav-item m-2'>About Us</li>
           <li className='h-14 m-4 flex items-center border border-red-500 hover:border-red-700 text-red-500 hover:text-red-700 font-semibold rounded focus:outline-none'>
               Register
           </li>
@@ -39,9 +39,9 @@ export default function NavigationBar() {
       {/* Mobile View */}
       <div className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'}>
         <ul className='absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'>
-          <li className='py-6 text-4xl'>Home</li>
-          <li className='py-6 text-4xl'>Policies</li>
-          <li className='py-6 text-4xl'>About Us</li>
+          <li className='nav-item py-6 text-4xl'>Home</li>
+          <li className='nav-item py-6 text-4xl'>Policies</li>
+          <li className='nav-item py-6 text-4xl'>About Us</li>
           <li className='py-6 text-4xl h-14 m-4 flex items-center border border-red-500 hover:border-red-700 text-red-500 hover:text-red-700 font-semibold rounded focus:outline-none'>
               Register
           </li>
