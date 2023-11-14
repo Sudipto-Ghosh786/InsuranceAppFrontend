@@ -17,19 +17,9 @@
   padding: 0;
   min-width: 130px;
   min-height: 50px;
-  position: relative;
 }
-
-.text-content,
-.icon-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Add this to your CSS or use Tailwind classes */
+.add-to-cart-button {
   transition: opacity 0.3s;
 }
 
@@ -44,6 +34,7 @@
 .add-to-cart-button:hover .icon-content {
   opacity: 1;
 }
+
 
 
 .nav-item {
