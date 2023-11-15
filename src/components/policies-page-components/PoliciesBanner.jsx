@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function PoliciesBanner() {
+export default function PoliciesBanner({ title, value }) {
     return (
         <div className='border-b-8'>
             <br />
@@ -8,8 +8,8 @@ export default function PoliciesBanner() {
             <br />
             <br />
             <br />
-            <h1 className='text-5xl'>Policy Catalog</h1>
-            <i className='text-sm'>Choose any policy you need.</i>
+            <h1 className='text-5xl'>{title}</h1>
+            <i className='text-sm'>{value}</i>
         </div>
     )
 }

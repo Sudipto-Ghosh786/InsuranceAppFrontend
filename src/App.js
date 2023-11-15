@@ -1,10 +1,11 @@
 import './App.css';
 import PoliciesPage from './pages/PoliciesPage';
+import Routers from './pages/Routers';
 
 function App() {
   return (
     <div className="App">
-      <PoliciesPage />
+      <Routers />
     </div>
   );
 }

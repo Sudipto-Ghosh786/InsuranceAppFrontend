@@ -3,9 +3,11 @@ import { Fa500Px, FaTimes } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import InsuranceBuildingLogo from "../assets/building-icon.png";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 export default function NavigationBar({ cartItemCount }) {
   const [nav, setNav] = useState(false);
+  console.log(cartItemCount);
 
   const handleClick = () => {
     return setNav(!nav);
@@ -25,8 +27,8 @@ export default function NavigationBar({ cartItemCount }) {
       {/* Menu */}
       <div className="hidden md:flex h-full items-center">
         <ul className="w-full h-full hidden md:flex items-center">
-          <li className="nav-item m-2">Home</li>
-          <li className="nav-item m-2">Policies</li>
+          <li className="nav-item m-2"><Link to={"/"}>Home</Link></li>
+          <li className="nav-item m-2"><Link to={"/policies"}>Policies</Link></li>
           <li className="nav-item m-2">About Us</li>
           <li className="h-14 m-4 flex items-center border border-red-500 hover:border-red-700 text-red-500 hover:text-red-700 font-semibold rounded focus:outline-none">
             Register
@@ -35,12 +37,14 @@ export default function NavigationBar({ cartItemCount }) {
             Login
           </li>
           <li className="h-14 m-4 flex items-center text-blue-500 hover:text-blue-700 font-semibold rounded focus:outline-none">
-            <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
-            {cartItemCount > 0 && (
-              <span className="bg-red-500 text-white px-2 rounded-full">
-                {cartItemCount}
-              </span>
-            )}
+            <Link to={"/cart"}>
+              <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
+              {cartItemCount > 0 && (
+                <span className="bg-red-500 text-white px-2 rounded-full">
+                  {cartItemCount}
+                </span>
+              )}
+            </Link>
           </li>
         </ul>
       </div>
