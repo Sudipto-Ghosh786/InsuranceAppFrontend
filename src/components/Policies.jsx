@@ -1,17 +1,34 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import PolicyCard from './PolicyCard';
+// import { catalogData } from '../testData/catalogData';
+// import { cartItemsData } from '../testData/cartItemsData';  
 
-export default function Policies() {
+export default function Policies({ catalogData, cartItems, setCartItems }) {
+  const userId = 1;
+
+  console.log("Cart Items");
+  console.log(cartItems);
+
+  const PolicyCards = catalogData.map((policyItem) => {
+    return <PolicyCard key={policyItem.policyId}
+    userId={userId}
+    policyId={policyItem.policyId} 
+    title={policyItem.policyName} 
+    description={policyItem.description} 
+    imageUrl="https://i.pravatar.cc"
+    premium={policyItem.premium}
+    insuranceType={policyItem.insuranceType}
+    companyName={policyItem.companyName}
+    cartItems={cartItems}
+    setCartItems={setCartItems} />
+  })
+
+  console.log(PolicyCards);
+
   return (
     <div className='container px-5 py-12 mx-auto flex flex-wrap items-center justify-center'>
-      <PolicyCard title="Policy_Name-1" description="lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set" imageUrl="https://i.pravatar.cc" />
-      <PolicyCard title="Policy_Name-2" description="lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set" imageUrl="https://i.pravatar.cc" />
-      <PolicyCard title="Policy_Name-3" description="lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set" imageUrl="https://i.pravatar.cc" />
-      <PolicyCard title="Policy_Name-4" description="lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set" imageUrl="https://i.pravatar.cc" />
-      <PolicyCard title="Policy_Name-5" description="lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set" imageUrl="https://i.pravatar.cc" />
-      <PolicyCard title="Policy_Name-6" description="lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set" imageUrl="https://i.pravatar.cc" />
-      <PolicyCard title="Policy_Name-7" description="lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set" imageUrl="https://i.pravatar.cc" />
-      <PolicyCard title="Policy_Name-8" description="lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set lorem ipsum set" imageUrl="https://i.pravatar.cc" />
+      {PolicyCards}
     </div>
   )
 }
